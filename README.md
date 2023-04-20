@@ -22,11 +22,9 @@ See [English template user manual](./docs/english.md) for more details.
 
 ## 使用
 
-zjuthesis 模板有三种使用方式，Overleaf，本地编译，或者 Container 编译：
-
-- Overleaf 是一个线上 LaTeX 编辑器，可以在不安装任何工具的情况下编写 LaTeX 文档，同时也可以和其他人共享文档，共同编辑。
-- 本地编译比 Overleaf 更快，而且本地编译可以使用 Git 来记录版本。推荐有能力的同学设置本地编译环境，并推荐使用 Visual Studio Code 配合 LaTeX workshop 插件 (vscode 使用方式见[FAQ](./docs/FAQ.md))。
-- Container 编译是使用 GitHub 提供的 Codespace 搭配 Container 来编译，这个环境提供了浏览器内的 VS Code 界面以及 TeX Live 的编译环境。这种方式适合熟悉 Container 与 GitHub Codespace 相关用法的同学使用。
+zjuthesis 模板有两种使用方式，Overleaf 或本地编译：
+   - Overleaf 是一个线上 LaTeX 编辑器，可以在不安装任何工具的情况下编写 LaTeX 文档，同时也可以和其他人共享文档，共同编辑。
+   - 本地编译比 Overleaf 更快，而且本地编译可以使用 Git 来记录版本。推荐有能力的同学设置本地编译环境，并推荐使用 Visual Studio Code 配合 LaTeX workshop 插件 (vscode 使用方式见[FAQ](./docs/FAQ.md))。
 
 ### Overleaf
 
@@ -41,7 +39,7 @@ zjuthesis 模板有三种使用方式，Overleaf，本地编译，或者 Contain
 
 ### 本地编译
 
-1. 安装 TeXLive 工具包，编译需要 XeTeX 引擎。安装过程可以参考[浙江大学镜像站提供的文档](https://mirrors.zju.edu.cn/docs/CTAN)，以便在校内网下更快下载。
+1. 安装 TeXLive 工具包，编译需要 XeTeX 引擎
 1. [下载模板代码](https://github.com/TheNetAdmin/zjuthesis/releases)，
    每个专业模板都有预览 pdf 文件，可以单独下载查看。
    模板代码请下载 `zjuthesis-v*.*.*.zip` 文件
@@ -50,29 +48,28 @@ zjuthesis 模板有三种使用方式，Overleaf，本地编译，或者 Contain
 
    - `Degree` 为 `undergraduate` 时，编译本科生论文：
 
-   | Field       | Option 1                             | Option 2                               | Option 3                           |
-   | :---------- | :----------------------------------- | :------------------------------------- | :--------------------------------- |
-   | Type        | thesis: 论文类                       | design: 设计类                         |                                    |
-   | Period      | proposal: 开题报告                   | final: 最终论文/设计（含开题报告）     | paper: 最终论文/报告（无开题报告） |
-   | BlindReview | true: 生成盲审用 pdf（隐藏个人信息） | false: 生成提交用 pdf                  |                                    |
-   | MajorFormat | general: 默认模板                    | 与 `config/format/major/` 下目录名相同 |                                    |
+   | Field      | Option 1                            | Option 2                              |
+   | :--------- | :-----------------------------------| :------------------------------------ |
+   |Type        | thesis: 论文类                       | design: 设计类                         |
+   |Period      | proposal: 开题报告                   | final: 最终论文/设计                    |
+   |BlindReview | true: 生成盲审用 pdf（隐藏个人信息）   | false: 生成提交用 pdf                   |
+   |MajorFormat | general: 默认模板                    | 与 `config/format/major/` 下目录名相同  |
 
    - `Degree` 为 `graduate` 时，编译硕士生/博士生论文：
 
 
-   | Field       | Option 1                             | Option 2                               |
-   | :---------- | :----------------------------------- | :------------------------------------- |
-   | Type        | thesis: 学术论文                     | design: 专业学术论文                   |
-   | BlindReview | true: 生成盲审用 pdf（隐藏个人信息） | false: 生成提交用 pdf                  |
-   | MajorFormat | general: 默认模板                    | 与 `config/format/major/` 下目录名相同 |
-   | GradLevel   | master: 硕士                         | doctor: 博士                           |
+   | Field      | Option 1                            | Option 2                              |
+   | :--------- | :-----------------------------------| :------------------------------------ |
+   | Type       | thesis: 学术论文                     | design: 专业学术论文                    |
+   | BlindReview| true: 生成盲审用 pdf（隐藏个人信息）   | false: 生成提交用 pdf                   |
+   | MajorFormat| general: 默认模板                    | 与 `config/format/major/` 下目录名相同  |
+   | GradLevel  | master: 硕士                         | doctor: 博士                           |
 
-   - 其他设置
+   - Debug 相关设置
 
-   | Field         | Option 1                                  | Option 2            |
-   | :------------ | :---------------------------------------- | :------------------ |
-   | PrintFilePath | true: 在每页侧边打印该页对应 TeX 文件路径 | false: 不打印此输出 |
-   | TwoSide       | true: 章节末的偶数页留白，保证下章节的标题位于奇数页 | false: 取消偶数页留白 |
+   | Field         | Option 1                              | Option 2                              |
+   | :------------ | :------------------------------------ | :------------------------------------ |
+   | PrintFilePath | true: 在每页侧边打印该页对应 TeX 文件路径 | false: 不打印此输出                    |
 
 1. 在 `body` 目录下编写内容
 1. 在 `pages` 目录下填写必要的内容，如审核评语等
@@ -87,23 +84,6 @@ zjuthesis 模板有三种使用方式，Overleaf，本地编译，或者 Contain
 > - 本模板已经兼容 TeXLive 2021。TeXLive 2018 以及之前的版本复制伪粗体文字会产生乱码，建议使用本地 TeXLive 的同学使用最新版 TeXLive。
 > - 计算机专业的部分页面与学校通用格式不同，如果你是计算机专业的同学，请使用计算机专业的模板。
 
-### 使用容器编译
-
-本模板提供了一套配置文件，用以支持在容器中安装TeX Live，项目使用的字体，以及VS Code上的[LaTeX Workshop](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop)插件，配合GitHub Codespaces可以做到开箱即用。感谢 [FUTURETECH6](https://github.com/FUTURETECH6) 同学贡献的[代码](https://github.com/TheNetAdmin/zjuthesis/pull/222)。
-
-GitHub Codespace使用方法：
-
-1. 创建个人的项目（直接fork，或自行clone并修改remote）
-1. 在个人的项目主页点击"Code"
-1. 点击"Codespaces"
-1. 点击"New codespace"
-1. 等待容器构建（这一过程约要10分钟，因为要在标准Ubuntu的镜像中安装TeX Live）
-1. 构建完成后，可以选择在VS Code（需要[GitHub Codespaces](https://marketplace.visualstudio.com/items?itemName=GitHub.codespaces)插件）中或在浏览器中打开，然后按照在本地的使用方式使用
-
-> **注意**
->
-> - 这一功能的初衷是为了方便性能较弱的设备（例如低功耗笔记本电脑）也能利用免费的云运算资源较快地完成编译，因此**不建议**在本地性能较强的机器上使用（请改用"本地编译"）。
-
 ### 字数统计
 
 本模板提供了一个脚本用于统计正文字数，请在根目录下使用 `latexmk` 编译一遍模板，然后执行脚本 `script/utils/word_count.sh`。
@@ -113,21 +93,19 @@ GitHub Codespace使用方法：
 
 作者用于毕业答辩的一个 Slides 模板 (Microsoft PowerPoint 模板)
 
-- [GitHub 下载链接](https://github.com/TheNetAdmin/zjuthesis/releases/tag/v2.1.1-slide)
-- [Gitee （国内镜像仓库）下载链接](https://gitee.com/netadmin/zjuthesis/releases/v2.1.1-slide) 国内网络用这个链接下载比较快
+   - [GitHub 下载链接](https://github.com/TheNetAdmin/zjuthesis/releases/tag/v2.1.1-slide)
+   - [Gitee （国内镜像仓库）下载链接](https://gitee.com/netadmin/zjuthesis/releases/v2.1.1-slide) 国内网络用这个链接下载比较快
 
 [HGGshiwo](https://github.com/HGGshiwo) 同学于 2021 年开发了基于 Beamer 的 Slides 模板，有兴趣的同学可以参考如下几个 repo
 
-- [Formal](https://github.com/HGGshiwo/BeamerthemeFormal) (内含对其他几个 Beamer 模板的简介)
-- [Brief](https://github.com/HGGshiwo/BeamerthemeBrief)
-- [Mixture](https://github.com/HGGshiwo/BeamerthemeMixture)
-- [Classical](https://github.com/HGGshiwo/BeamerthemeClassical)
+   - [Formal](https://github.com/HGGshiwo/BeamerthemeFormal) (内含对其他几个 Beamer 模板的简介)
+   - [Brief](https://github.com/HGGshiwo/BeamerthemeBrief)
+   - [Mixture](https://github.com/HGGshiwo/BeamerthemeMixture)
+   - [Classical](https://github.com/HGGshiwo/BeamerthemeClassical)
 
 ## 参考文档
 
 常见问题与解决方案请参考[FAQ](./docs/FAQ.md)，模板使用请参考[使用手册](./docs/usage.md)，模板修改与二次开发请参考[开发手册](./docs/develop.md)。
-
-本模板所使用的各专业规范文件请参考 [zjuthesis-std](https://github.com/thenetadmin/zjuthesis-std)。
 
 ## 贡献
 
