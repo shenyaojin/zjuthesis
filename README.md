@@ -9,7 +9,7 @@
 
 ## Compilation
 
-The project must be compiled by overleaf, and the LaTeX version must newer than Texlive 2021.
+The project must be compiled by overleaf, and the LaTeX version must be newer than Texlive 2021.
 
 ## Open Source License
 
