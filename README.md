@@ -7,7 +7,9 @@
 [![GithubAction](https://github.com/TheNetAdmin/zjuthesis/workflows/Build%20Tests/badge.svg)](https://github.com/TheNetAdmin/zjuthesis/actions)
 [![GitHub Discussion](https://img.shields.io/badge/github-discussion-blue)](https://github.com/TheNetAdmin/zjuthesis/discussions)
 
+## Compile
 
+The project must be compiled by overleaf, and the LaTeX version must newer than Texlive 2021.
 
 ## Open Source License
 
