@@ -16,39 +16,7 @@
 \ifthenelse{\equal{\Degree}{undergraduate}}
 {
     % undergraduate
-    \newcommand{\inputpage}[2]
-    {
-        % Arguments
-        %    #1 [final|proposal]
-        %    #2 [filename.tex]
-        % Directory structure:
-        % graduate/undergraduate            [Degree     ] [required        ]
-        % |-- major
-        %     |-- general/cs/math/...       [MajorFormat] [optional        ]
-        %         |-- cover.tex/toc.tex/... [TeX Files  ] [template defined]
-        %
-        % Search from bottom-level to top-level:
-        % E.g:
-        %     With such dir:
-        %     undergraduate
-        %     |-- cover.tex
-        %     |-- toc.tex
-        %     |-- abstract.tex
-        %     |-- major
-        %         |-- ee
-        %             |-- abstract.tex
-        %     The input files are:
-        %         undergraduate/cover.tex
-        %         undergraduate/toc.tex
-        %         undergraduate/major/ee/abstract.tex
-        \IfFileExists{./page/undergraduate/#1/major/\MajorFormat/#2}
-        {
-            \input{./page/undergraduate/#1/major/\MajorFormat/#2}
-        }
-        {
-            \input{./page/undergraduate/#1/#2}
-        }
-    }
+    \newcommand{\inputpage}[1]{\input{./page/undergraduate/#1}}
     \newcommand{\inputbody}[1]{\input{./body/undergraduate/#1}}
 
     % TODO: how to switch to \section* without breaking current formats?
@@ -246,8 +214,6 @@
         \end{tabular}
     \end{flushright}
 }
-
-% `thesis` commands
 
 % `thesis` commands
 \DeclareDocumentCommand{\thesisproposaleval}{O{~} O{~} O{~}}
